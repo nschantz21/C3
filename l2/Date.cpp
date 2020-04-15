@@ -1,9 +1,13 @@
+#include <iostream>
+using std::cout;
 
 #include "Date.h"
 
-// inline not required for definition
-int
-NickSchantz::Date::getYear(int year)
+void
+NickSchantz::Date::display() const
 {
-
+    cout << typeid(month).name() << "\n";
+    cout << this->getMonth() << '/' 
+        << this->getDay() << '/' 
+        << this->getYear() << '\n';
 }
