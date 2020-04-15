@@ -15,15 +15,25 @@ using NickSchantz::Date;
 
 int main()
 {
+    // default constructor and display
     Date defaultDate = Date();
+    cout << "Default constructor: ";
     defaultDate.display();
 
+    // paramaterized constructor and display
+    Date paramDate = Date(10, 19, 1987);
+    cout << "Parameterized constructor: ";
+    paramDate.display();
 
-    time_t now = time(0);
-    struct tm *today = localtime(&now);
-    int day = today->tm_mday;
-    int month = today->tm_mon + 1;
-    int year = today->tm_year + 1900;
-    cout << day << " " << month << " " << year << "\n";
+    // getters
+    cout << "Getters:\n\tMonth: " << defaultDate.getMonth()
+        << " Day: " << defaultDate.getDay()
+        << " Year: " << defaultDate.getYear() << "\n";
+
+    // errors
+    Date invalidMonth(13, 1, 1);
+    Date invalidDay(4, 31, 1980);
+    Date invalidYear(1, 1, -5);
+
     return 0;
 }
