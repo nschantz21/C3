@@ -15,7 +15,8 @@ namespace NickSchantz {
     class SavingsAccount
     {
         private:
-            double savingsBalance, annualInterestRate;
+            double savingsBalance;
+            static double annualInterestRate;
     
         public:
             // paramaterized constructor

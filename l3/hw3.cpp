@@ -22,15 +22,19 @@ int main()
     // getSavingsBalance
     double expectedSavings = 1000;
     cout << "Savings Balance\n\tExpected: " << expectedSavings 
-        << "\n\tReported: " << mySavings.getSavingsBalance();
+        << "\n\tReported: " << mySavings.getSavingsBalance() << "\n";
     
     // set class interest rate
-    SavingsAccount::setAnnualInterestRate(.1);
+    double newInterest = .1;
+    SavingsAccount::setAnnualInterestRate(newInterest);
 
     // apply monthly interest
     // should be 1083.3
-    mySavings.applyMonthlyInterest()
-    cout << "My savings after interest: " << mySavings.getSavingsBalance() << "\n";
+    mySavings.applyMonthlyInterest();
+
+    cout << " My savings after interest\n\tExpected: "
+        << expectedSavings * (1.0 + newInterest/12.0) << "\n\t"
+        "Actual: " << mySavings.getSavingsBalance() << "\n";
 
     return 0;
 }

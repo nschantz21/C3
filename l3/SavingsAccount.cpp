@@ -12,6 +12,8 @@
 using std::cerr;
 using namespace NickSchantz;
 
+double NickSchantz::SavingsAccount::annualInterestRate;
+
 // constructor
 NickSchantz::SavingsAccount::SavingsAccount(double initialBalance)
 {
@@ -26,7 +28,7 @@ NickSchantz::SavingsAccount::SavingsAccount(double initialBalance)
 }
 
 double
-NickSchantz::SavingsAccount::getSavingsBalance()
+NickSchantz::SavingsAccount::getSavingsBalance() const
 {
     return savingsBalance;
 }
@@ -46,6 +48,6 @@ NickSchantz::SavingsAccount::setAnnualInterestRate(double newInterestRate)
 void
 NickSchantz::SavingsAccount::applyMonthlyInterest()
 {
-    monthlyInterestRate = annualInterestRate / 12.0;
-    savingsBalance += savingsBalance * (1.0 + monthlyInterestRate);
+    double monthlyInterestRate = NickSchantz::SavingsAccount::annualInterestRate / 12.0;
+    savingsBalance *= (1.0 + monthlyInterestRate);
 }
