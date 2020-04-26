@@ -17,7 +17,7 @@ namespace NickSchantz {
     class Complex
     {
     // declare stream friend functions
-    friend istream &operator>>(istream &in, Complex &vlaue);
+    friend istream &operator>>(istream &in, Complex &value);
     friend ostream &operator<<(ostream &out, const Complex &value);
     // friend bool operator==(const Complex &op1, const Complex &op2);
     // friend bool operator!=const Complex &op1, const Complex &op2);
@@ -41,12 +41,14 @@ namespace NickSchantz {
     };
 
     // stream insertion operator
-    istream &operator>>(istream &in, Complex &vlaue)
+    istream &operator>>(istream &in, Complex &value)
     {
         // read in the real number
         double real, imaginary;
         char c;
         in >> real >> c >> imaginary >> c;
+        value.real = real;
+        value.imaginary = imaginary;
         return in;
     }
     // stream extraction operator

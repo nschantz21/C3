@@ -20,7 +20,10 @@ NickSchantz::Complex::operator+(const Complex &other) const
 Complex 
 NickSchantz::Complex::operator-(const Complex &other) const
 {
-    return Complex(this->real - other.real, this->imaginary - other.imaginary);
+    return Complex(
+        this->real - other.real,
+        this->imaginary - other.imaginary
+    );
 }
 /*
 bool 
