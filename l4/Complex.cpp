@@ -9,7 +9,7 @@
 
 #include "Complex.h"
 
-using NickSchantz::Complex;
+using namespace NickSchantz;
 
 Complex 
 NickSchantz::Complex::operator+(const Complex &other) const
@@ -37,4 +37,26 @@ bool
 NickSchantz::Complex::operator!=(const Complex &other) const
 {
     return !(*this == other);
+}
+
+// stream insertion operator
+istream &
+NickSchantz::operator>>(istream &in, Complex &value)
+{
+    // read in the real number
+    double real, imaginary;
+    char c;
+    in >> real >> c >> imaginary >> c;
+    value.real = real;
+    value.imaginary = imaginary;
+    return in;
+}
+
+// stream extraction operator
+ostream &
+NickSchantz::operator<<(ostream &out, const Complex &value)
+{
+    out << value.real <<  "+" << value.imaginary << "i";
+    return out;
+
 }

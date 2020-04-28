@@ -43,26 +43,9 @@ namespace NickSchantz {
         double imaginary;
     };
 
-    // stream insertion operator
-    istream &operator>>(istream &in, Complex &value)
-    {
-        // read in the real number
-        double real, imaginary;
-        char c;
-        in >> real >> c >> imaginary >> c;
-        value.real = real;
-        value.imaginary = imaginary;
-        return in;
-    }
-
-    // stream extraction operator
-    ostream &operator<<(ostream &out, const Complex &value)
-    {
-        out << value.real <<  "+" << value.imaginary << "i";
-        return out;
-
-    }
-
+// stream
+istream &operator>>(istream &in, Complex &value);
+ostream &operator<<(ostream &out, const Complex &value);
 }
 
 #endif

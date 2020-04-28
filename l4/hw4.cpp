@@ -27,8 +27,6 @@ int main()
     cin >> streamComplex;
     cout << streamComplex << "\n";
 
-    //Complex newComplex = firstComplex + streamComplex;
-/*
     // addition
     cout << "Add: " << firstComplex + streamComplex << "\n" <<
     // subtraction
@@ -39,6 +37,5 @@ int main()
     // non-equivalence
         "Not Equal: " << (streamComplex != firstComplex) << "\n"
         << std::noboolalpha;
-*/
     return 0;
 }
