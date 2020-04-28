@@ -19,21 +19,24 @@ namespace NickSchantz {
     // declare stream friend functions
     friend istream &operator>>(istream &in, Complex &value);
     friend ostream &operator<<(ostream &out, const Complex &value);
-    // friend bool operator==(const Complex &op1, const Complex &op2);
-    // friend bool operator!=const Complex &op1, const Complex &op2);
+    
     public:
         // constructor
         Complex(double real = 0.0, double imaginary = 0.0):
             real(real), imaginary(imaginary){};
+
         // operators
         // addition
         Complex operator+(const Complex &other) const;
         // subtraction
         Complex operator-(const Complex &other) const;
         // equivalence
-        //bool operator==(const Complex &other) const;
+        bool operator==(const Complex &other) const;
         // non-equivalence
-        //bool operator!=(const Complex &other) const;
+        bool operator!=(const Complex &other) const;
+
+        double getReal() const {return real;}
+        double getImaginary() const {return imaginary;}
 
     private:
         double real;
@@ -51,6 +54,7 @@ namespace NickSchantz {
         value.imaginary = imaginary;
         return in;
     }
+
     // stream extraction operator
     ostream &operator<<(ostream &out, const Complex &value)
     {
@@ -58,7 +62,6 @@ namespace NickSchantz {
         return out;
 
     }
-
 
 }
 

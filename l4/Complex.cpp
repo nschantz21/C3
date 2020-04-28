@@ -9,7 +9,7 @@
 
 #include "Complex.h"
 
-using namespace NickSchantz;
+using NickSchantz::Complex;
 
 Complex 
 NickSchantz::Complex::operator+(const Complex &other) const
@@ -25,17 +25,16 @@ NickSchantz::Complex::operator-(const Complex &other) const
         this->imaginary - other.imaginary
     );
 }
-/*
+
 bool 
-NS::Complex::operator==(const Complex &op1, const Complex &op2)
+NickSchantz::Complex::operator==(const Complex &other) const
 {
-    return op1.real == op2.real && 
-    op1.imaginary == op2.imaginary;
+    return real == other.getReal() && 
+        imaginary == other.getImaginary();
 }
 
 bool
-NS::Complex::operator!=const Complex &op1, const Complex &op2)
+NickSchantz::Complex::operator!=(const Complex &other) const
 {
-    return !(op1 == op2);
+    return !(*this == other);
 }
-*/

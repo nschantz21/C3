@@ -12,13 +12,33 @@ using std::cout;
 using std::cin;
 
 #include "Complex.h"
-using namespace NickSchantz;
+using NickSchantz::Complex;
 
 int main()
 {
-    Complex myComplex;
+    // default constructor
+    Complex zeroComplex = Complex();
+    // paramaterized constructor
+    Complex firstComplex(12, 5);
+    
+    // ostreams
+    Complex streamComplex;
+    cout << "input a complex number in the format <Real>+<Imaginary>i: ";
+    cin >> streamComplex;
+    cout << streamComplex << "\n";
 
-    cin >> myComplex;
-    cout << myComplex << "\n";
+    //Complex newComplex = firstComplex + streamComplex;
+/*
+    // addition
+    cout << "Add: " << firstComplex + streamComplex << "\n" <<
+    // subtraction
+        "Sub: " << streamComplex - firstComplex << "\n" <<
+    // equivalence
+        std::boolalpha <<
+        "Equal: " << (streamComplex == firstComplex) << "\n" <<
+    // non-equivalence
+        "Not Equal: " << (streamComplex != firstComplex) << "\n"
+        << std::noboolalpha;
+*/
     return 0;
 }
