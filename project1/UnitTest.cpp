@@ -103,7 +103,7 @@ Project1UnitTest::TestCoin()
     TestCoin_CoinTypeConstructor();
     TestCoin_AllDenominationsAndValues();
 }
-/*
+
 void
 TestProduct_Constructor()
 {
@@ -141,7 +141,7 @@ Project1UnitTest::TestProduct()
     TestProduct_Constructor();
     TestProduct_GettersSetters();
 }
-
+/*
 void
 TestDeliveryChute_Constructor()
 {

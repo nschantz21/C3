@@ -11,46 +11,45 @@ using std::strcpy;
 #include "Product.h"
 
 Project1::Product::Product(const char *brand, const char *name,
-    const char *size)
+    const char *size) 
 {
-    // TODO: Implement
+    strcpy(this->brand, brand);
+    strcpy(this->name, name);
+    strcpy(this->size, size);
 }
 
 const char *
 Project1::Product::getBrand() const
 {
-    // TODO: Implement
-    return "";
+    return brand; 
 }
 
 void
 Project1::Product::setBrand(const char *value)
 {
-    // TODO: Implement
+    strcpy(brand, value);
 }
 
 const char *
 Project1::Product::getName() const
 {
-    // TODO: Implement
-    return "";
+    return name;
 }
 
 void
 Project1::Product::setName(const char *value)
 {
-    // TODO: Implement
+    strcpy(name, value);
 }
 
 const char *
 Project1::Product::getSize() const
 {
-    // TODO: Implement
-    return "";
+    return size;
 }
 
 void
 Project1::Product::setSize(const char *value)
 {
-    // TODO: Implement
+    strcpy(size, value);
 }
