@@ -141,7 +141,7 @@ Project1UnitTest::TestProduct()
     TestProduct_Constructor();
     TestProduct_GettersSetters();
 }
-/*
+
 void
 TestDeliveryChute_Constructor()
 {
@@ -225,7 +225,7 @@ Project1UnitTest::TestDeliveryChute()
     TestDeliveryChute_DroppingProductIntoNonEmptyChute();
     TestDeliveryChute_ErrorMessages();
 }
-
+/*
 void
 TestProductRack_Constructor()
 {

@@ -5,37 +5,54 @@
 * DeliveryChute.cpp
 * YOU MUST IMPLEMENT THE FUNCTIONS IN THIS FILE.
 */
+#include <iostream>
+using std::cerr;
+
 #include "DeliveryChute.h"
 
 Project1::DeliveryChute::DeliveryChute(StatusPanel &statusPanel)
     : statusPanel(statusPanel),
       pProduct(0)
-{
-    // TODO: Implement
-}
+{}
 
 Project1::DeliveryChute::~DeliveryChute()
 {
-    // TODO: Implement
+    // remove pointer
+    delete pProduct;
 }
 
 bool
 Project1::DeliveryChute::insertProduct(Product *pProduct)
 {
-    // TODO: Implement
-    return false;
+    if (containsProduct())
+    {
+        statusPanel.displayMessage(statusPanel.MESSAGECODE_CHUTE_FULL);
+        return false;
+    } else {
+        this->pProduct = pProduct;
+
+        return true;
+    }
 }
 
 Project1::Product *
 Project1::DeliveryChute::retrieveProduct()
 {
-    // TODO: Implement
-    return 0;
+    if (containsProduct())
+    {
+        // creating static pointer so that it won't be deleted when function
+        // scope is exited
+        static Product *rProduct;
+        rProduct = pProduct;
+        pProduct = NULL;
+        return rProduct;
+    } else {
+        return 0;
+    }
 }
 
 bool
 Project1::DeliveryChute::containsProduct() const
 {
-    // TODO: Implement
-    return false;
+    return pProduct != NULL;
 }
