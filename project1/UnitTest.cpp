@@ -103,7 +103,7 @@ Project1UnitTest::TestCoin()
     TestCoin_CoinTypeConstructor();
     TestCoin_AllDenominationsAndValues();
 }
-
+/*
 void
 TestProduct_Constructor()
 {
@@ -942,3 +942,4 @@ Project1UnitTest::TestVendingMachine()
     TestVendingMachine_ErrorMessages();
     TestVendingMachine_CoinBox();
 }
+*/
