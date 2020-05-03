@@ -225,7 +225,7 @@ Project1UnitTest::TestDeliveryChute()
     TestDeliveryChute_DroppingProductIntoNonEmptyChute();
     TestDeliveryChute_ErrorMessages();
 }
-/*
+
 void
 TestProductRack_Constructor()
 {
@@ -274,6 +274,7 @@ TestProductRack_AddAndDeliverOneProduct()
     TEST_ASSERT(p3 == p3Copy);
     delete p3Copy;
     TEST_ASSERT(!pr3.deliverProduct());
+    delete p3;
 
     TestFramework::EndTest();
 }
@@ -463,7 +464,7 @@ Project1UnitTest::TestProductRack()
     TestProductRack_IsFull();
     TestProductRack_ErrorMessages();
 }
-
+/*
 void
 TestProductButton_Constructor()
 {
