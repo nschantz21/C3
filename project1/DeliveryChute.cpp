@@ -29,8 +29,9 @@ Project1::DeliveryChute::insertProduct(Product *pProduct)
         statusPanel.displayMessage(statusPanel.MESSAGECODE_CHUTE_FULL);
         return false;
     } else {
-        // deep copy
-        this->pProduct = new Product(*pProduct);
+
+        static Product *sProduct = pProduct;
+        this->pProduct = sProduct;
 
         return true;
     }
