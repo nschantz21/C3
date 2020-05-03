@@ -464,7 +464,7 @@ Project1UnitTest::TestProductRack()
     TestProductRack_IsFull();
     TestProductRack_ErrorMessages();
 }
-/*
+
 void
 TestProductButton_Constructor()
 {
@@ -943,4 +943,4 @@ Project1UnitTest::TestVendingMachine()
     TestVendingMachine_ErrorMessages();
     TestVendingMachine_CoinBox();
 }
-*/
+

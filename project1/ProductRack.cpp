@@ -65,7 +65,11 @@ Project1::ProductRack::addProduct(Product* pProduct)
     {
         statusPanel.displayMessage(statusPanel.MESSAGECODE_RACK_IS_FULL);
     } else {
-        products[getNumProductsInRack()] = pProduct;
+        products[getNumProductsInRack()] = new Product(
+            pProduct->getBrand(),
+            pProduct->getName(),
+            pProduct->getSize()
+        );
         ++productCount;
         return true;
     }
