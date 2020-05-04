@@ -7,15 +7,18 @@ namespace NickSchantz
     class Shape
     {
         public:
-            virtual void display() const;
+            virtual void display() const = 0;
+    
+            virtual ~Shape(){}
     };
     
     // 2D
     class TwoDimensionalShape: public Shape
     {
         public:
-            virtual void getArea() const;
-    }
+            virtual double getArea() const = 0;
+            virtual ~TwoDimensionalShape(){}
+    };
     
     // Circle
     class Circle: public TwoDimensionalShape
@@ -23,12 +26,13 @@ namespace NickSchantz
         public:
             Circle(double radius);
 
-            void display() const;
-            double getArea() const;
+            virtual void display() const;
+            virtual double getArea() const;
+            virtual ~Circle(){}
     
         private:
             double radius;
-    }
+    };
     
     // Square
     class Square: public TwoDimensionalShape
@@ -36,20 +40,22 @@ namespace NickSchantz
         public:
             Square(double lengthOfSide);
 
-            void display() const;
-            double getArea() const;
+            virtual void display() const;
+            virtual double getArea() const;
+            virtual ~Square(){}
 
         private:
             double lengthOfSide;
-    }
+    };
     
     // 3D
     class ThreeDimensionalShape: public Shape
     {
         public:
-            virtual double getSurfaceArea() const;
-            virtual double getVolume() const;
-    }
+            virtual double getSurfaceArea() const = 0;
+            virtual double getVolume() const = 0;
+            virtual ~ThreeDimensionalShape(){}
+    };
     
     // Sphere
     class Sphere: public ThreeDimensionalShape
@@ -57,28 +63,31 @@ namespace NickSchantz
         public:
             Sphere(double radius);
     
-            void display() const;
+            virtual void display() const;
     
-            double getSurfaceArea() const;
-            double getVolume() const;
+            virtual double getSurfaceArea() const;
+            virtual double getVolume() const;
+            virtual ~Sphere(){}
 
         private:
             double radius;
-    }
+    };
     
     // Cube
     class Cube: public ThreeDimensionalShape
     {
         public:
             Cube(double lengthOfSide);
-            void display() const;
-            double getSurfaceArea() const;
-            double getVolume() const;
+            
+            virtual void display() const;
+            virtual double getSurfaceArea() const;
+            virtual double getVolume() const;
+            virtual ~Cube(){}
 
         private:
             double lengthOfSide;
 
-    }
+    };
     
 
 }
