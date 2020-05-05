@@ -18,7 +18,10 @@ Project1::DeliveryChute::DeliveryChute(StatusPanel &statusPanel)
 Project1::DeliveryChute::~DeliveryChute()
 {
     // remove pointer
-    delete pProduct;
+    if (containsProduct())
+    {
+        delete pProduct;
+    }
 }
 
 bool
@@ -29,10 +32,7 @@ Project1::DeliveryChute::insertProduct(Product *pProduct)
         statusPanel.displayMessage(statusPanel.MESSAGECODE_CHUTE_FULL);
         return false;
     } else {
-
-        static Product *sProduct = pProduct;
-        this->pProduct = sProduct;
-
+        this->pProduct = pProduct;
         return true;
     }
 }
@@ -44,7 +44,7 @@ Project1::DeliveryChute::retrieveProduct()
     {
         // creating static pointer so that it won't be deleted when function
         // scope is exited
-        static Product *rProduct;
+        Product *rProduct;
         rProduct = pProduct;
         pProduct = NULL;
         return rProduct;

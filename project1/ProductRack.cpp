@@ -34,6 +34,7 @@ Project1::ProductRack::~ProductRack()
     {
         delete products[p];
     }
+
 }
 
 bool
@@ -57,8 +58,8 @@ Project1::ProductRack::isEmpty() const
 bool
 Project1::ProductRack::addProduct(Product* pProduct)
 {
+    cout << "Add Product Rack\n";  // tstng
     // check if matches product name
-    cout << "check name\n";
     if (!isCompatibleProduct(pProduct->getName()))
     {
         statusPanel.displayMessage(
@@ -66,22 +67,9 @@ Project1::ProductRack::addProduct(Product* pProduct)
         );
     } else if (isFull())  // check if full
     {
-        cout << "check if full\n";
         statusPanel.displayMessage(statusPanel.MESSAGECODE_RACK_IS_FULL);
     } else {
-        /*
-        products[getNumProductsInRack()] = new Product(
-            pProduct->getBrand(),
-            pProduct->getName(),
-            pProduct->getSize()
-        );
-        */
-        cout << "Adding Product\n";
-        cout << "assigning to static\n";
-        static Product *sProduct = pProduct;
-        cout << "array\n";
-        products[getNumProductsInRack()] = &(*sProduct);
-        cout << "inc\n";
+        products[getNumProductsInRack()] = pProduct;
         ++productCount;
         return true;
     }
