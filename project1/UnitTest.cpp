@@ -319,14 +319,7 @@ TestProductRack_AddTooManyProducts()
     ProductRack pr6(sp1, "Coke", c6, 25);
     for (int i = 0; i < ProductRack::MAX_PRODUCTS; ++i)
     {
-        cout << i << "\n"; 
-        Product *temp = new Product("Coca Cola", "Coke", "12 fl oz");
-        cout << "Add " << temp << "\n";
-        bool added = pr6.addProduct(temp);
-        cout << "Assert\n";
-        TEST_ASSERT(added);
-        cout << "exit\n";
-        temp = NULL;
+        TEST_ASSERT(pr6.addProduct(new Product("Coca Cola", "Coke", "12 fl oz")));
     }
     Product *p6 = new Product("Coca Cola", "Coke", "12 fl oz");
     TEST_ASSERT(!pr6.addProduct(p6));

@@ -9,9 +9,6 @@
 using std::strcmp;
 using std::strcpy;
 
-#include <iostream>
-using std::cout;
-
 #include "ProductRack.h"
 
 Project1::ProductRack::ProductRack(
@@ -29,7 +26,7 @@ Project1::ProductRack::ProductRack(
 
 Project1::ProductRack::~ProductRack()
 {
-    // delete product objects
+    // delete product objects still controlled
     for (unsigned p = 0; p < getNumProductsInRack(); p++)
     {
         delete products[p];
@@ -58,7 +55,6 @@ Project1::ProductRack::isEmpty() const
 bool
 Project1::ProductRack::addProduct(Product* pProduct)
 {
-    cout << "Add Product Rack\n";  // tstng
     // check if matches product name
     if (!isCompatibleProduct(pProduct->getName()))
     {
@@ -69,6 +65,7 @@ Project1::ProductRack::addProduct(Product* pProduct)
     {
         statusPanel.displayMessage(statusPanel.MESSAGECODE_RACK_IS_FULL);
     } else {
+        // take control
         products[getNumProductsInRack()] = pProduct;
         ++productCount;
         return true;
@@ -83,7 +80,8 @@ Project1::ProductRack::deliverProduct()
     if (!isEmpty())
     {
         if(deliveryChute.insertProduct(products[getNumProductsInRack() - 1])) {
-                delete products[getNumProductsInRack() - 1];
+                // relinquish control
+                products[getNumProductsInRack() - 1] = NULL;
                 --productCount;
                 return true;
         }

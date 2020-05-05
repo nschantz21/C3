@@ -41,13 +41,16 @@ Project1::VendingMachine::~VendingMachine()
     for (int pn = 0; pn < NUM_PRODUCT_RACKS; pn++)
     {
         delete productRacks[pn];
+        productRacks[pn] = NULL;
         delete productButtons[pn];
+        productButtons[pn] = NULL;
     }
 
     // delete coins
     for (unsigned c = 0; c < numCoins; c++)
     {
         delete coinBox[c];
+        coinBox[c] = NULL;
     }
 
 }
@@ -59,7 +62,7 @@ Project1::VendingMachine::insertCoin(Coin *pCoin)
     if (pCoin->getDenomination() != (*pCoin).COINTYPE_WOODEN_NICKEL)
     {
         // add to coinBox
-        coinBox[getNumCoinsInCoinBox()] = new Coin(*pCoin);
+        coinBox[getNumCoinsInCoinBox()] = pCoin;
         numCoins++;
 
         // return if successful
@@ -87,7 +90,7 @@ Project1::VendingMachine::pressButton(int button)
     } else if (
         productRacks[button]->isEmpty()
     )
-    {        
+    {
         statusPanel.displayMessage(statusPanel.MESSAGECODE_SOLD_OUT);
     } else {
         productButtons[button]->press();
