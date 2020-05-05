@@ -13,9 +13,9 @@ using std::strcpy;
 Project1::Product::Product(const char *brand, const char *name,
     const char *size) 
 {
-    strcpy(this->brand, brand);
-    strcpy(this->name, name);
-    strcpy(this->size, size);
+    setBrand(brand);
+    setName(name);
+    setSize(size);
 }
 
 const char *
