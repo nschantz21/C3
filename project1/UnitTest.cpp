@@ -16,6 +16,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+
 #include <sstream>
 using std::stringstream;
 
@@ -225,7 +226,7 @@ Project1UnitTest::TestDeliveryChute()
     TestDeliveryChute_DroppingProductIntoNonEmptyChute();
     TestDeliveryChute_ErrorMessages();
 }
-/*
+
 void
 TestProductRack_Constructor()
 {
@@ -318,8 +319,14 @@ TestProductRack_AddTooManyProducts()
     ProductRack pr6(sp1, "Coke", c6, 25);
     for (int i = 0; i < ProductRack::MAX_PRODUCTS; ++i)
     {
-        TEST_ASSERT(pr6.addProduct(
-            new Product("Coca Cola", "Coke", "12 fl oz")));
+        cout << i << "\n"; 
+        Product *temp = new Product("Coca Cola", "Coke", "12 fl oz");
+        cout << "Add " << temp << "\n";
+        bool added = pr6.addProduct(temp);
+        cout << "Assert\n";
+        TEST_ASSERT(added);
+        cout << "exit\n";
+        temp = NULL;
     }
     Product *p6 = new Product("Coca Cola", "Coke", "12 fl oz");
     TEST_ASSERT(!pr6.addProduct(p6));
@@ -942,4 +949,3 @@ Project1UnitTest::TestVendingMachine()
     TestVendingMachine_ErrorMessages();
     TestVendingMachine_CoinBox();
 }
-*/

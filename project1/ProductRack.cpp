@@ -7,6 +7,10 @@
 */
 #include <cstring>
 using std::strcmp;
+using std::strcpy;
+
+#include <iostream>
+using std::cout;
 
 #include "ProductRack.h"
 
@@ -20,59 +24,83 @@ Project1::ProductRack::ProductRack(
         productCount(0),
         productPriceCents(productPriceCents)
 {
-    // TODO: Implement
+    strcpy(this->allowedProductName, allowedProductName);
 }
 
 Project1::ProductRack::~ProductRack()
 {
-    // TODO: Implement
+    // delete product objects
+    for (unsigned p = 0; p < getNumProductsInRack(); p++)
+    {
+        delete products[p];
+    }
+
 }
 
 bool
 Project1::ProductRack::isCompatibleProduct(const char *productName) const
 {
-    // TODO: Implement
-    return false;
+    return strcmp(allowedProductName, productName) == 0;
 }
 
 bool
 Project1::ProductRack::isFull() const
 {
-    // TODO: Implement
-    return false;
+    return getNumProductsInRack() == MAX_PRODUCTS;
 }
 
 bool
 Project1::ProductRack::isEmpty() const
 {
-    // TODO: Implement
-    return false;
+    return getNumProductsInRack() == 0;
 }
 
 bool
 Project1::ProductRack::addProduct(Product* pProduct)
 {
-    // TODO: Implement
+    cout << "Add Product Rack\n";  // tstng
+    // check if matches product name
+    if (!isCompatibleProduct(pProduct->getName()))
+    {
+        statusPanel.displayMessage(
+            statusPanel.MESSAGECODE_PRODUCT_DOES_NOT_MATCH_PRODUCT_RACK
+        );
+    } else if (isFull())  // check if full
+    {
+        statusPanel.displayMessage(statusPanel.MESSAGECODE_RACK_IS_FULL);
+    } else {
+        products[getNumProductsInRack()] = pProduct;
+        ++productCount;
+        return true;
+    }
+
     return false;
 }
 
 bool
 Project1::ProductRack::deliverProduct()
 {
-   // TODO: Implement
+    if (!isEmpty())
+    {
+        if(deliveryChute.insertProduct(products[getNumProductsInRack() - 1])) {
+                delete products[getNumProductsInRack() - 1];
+                --productCount;
+                return true;
+        }
+    } else {
+        statusPanel.displayMessage(statusPanel.MESSAGECODE_SOLD_OUT);
+    }
     return false;
 }
 
 unsigned
 Project1::ProductRack::getNumProductsInRack() const
 {
-    // TODO: Implement
-    return 0;
+    return productCount;
 }
 
 unsigned
 Project1::ProductRack::getProductPriceCents() const
 {
-    // TODO: Implement
-    return 0;
+    return productPriceCents;
 }

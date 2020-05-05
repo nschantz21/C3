@@ -44,10 +44,10 @@ int main()
     Project1UnitTest::TestCoin();
     Project1UnitTest::TestProduct();
     Project1UnitTest::TestDeliveryChute();
-    /*Project1UnitTest::TestProductRack();
+    Project1UnitTest::TestProductRack();
     Project1UnitTest::TestProductButton();
     Project1UnitTest::TestStatusPanel();
-    Project1UnitTest::TestVendingMachine();*/
+    Project1UnitTest::TestVendingMachine();
 
     // Display test results
     Project1UnitTest::DisplaySummary();
