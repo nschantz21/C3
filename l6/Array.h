@@ -10,35 +10,50 @@
 #ifndef ARRAY_H
 #define ARRAY_H
 
+#include <iostream>
+#include <stdexcept>
+using std::cerr;
+using std::invalid_argument;
+
 namespace NickSchantz
 {
     template <typename ElemType, int SIZE>
-    class Array<ElemType, SIZE>
+    class Array
     {
         public:
             // default constructor
-            Array(): elements{0}
-            {
-                
-            }
+            Array()
+            {}
 
             // copy constructor
-            Array(Array other<ElemType, SIZE>)
+            Array(const Array<ElemType, SIZE> &source)
             {
-                for (int arrIter = 0; arrIter <= SIZE; arrIter++)
+                for (int arrIter = 0; arrIter < SIZE; arrIter++)
                 {
-                    elements[arrIter] = other[arrIter];
+                    elements[arrIter] = source[arrIter];
+                    
                 }
             }
 
             // operators
-            Array<ElemType, SIZE> operator=(Array<ElemType, SIZE> &other);
-
-            bool operator==(Array<ElemType, SIZE> other) const
+            // assignment
+            Array<ElemType, SIZE> operator=(const Array<ElemType, SIZE> source)
             {
-                for (int arrIter = 0; arrIter <= SIZE; arrIter++)
+                // prevent self-assignment
+                if (source != *this){
+                    // call to copy constructor
+                    Array<ElemType, SIZE>(source);
+                    // return destination for chained assignment
+                    return *this;
+                }
+            }
+
+            // equality
+            bool operator==(const Array<ElemType, SIZE> other) const
+            {
+                for (int arrIter = 0; arrIter < SIZE; arrIter++)
                 {
-                    if ((*this)[arrIter] != other[arrIter]) {
+                    if (this->elements[arrIter] != other[arrIter]) {
                         return false;
                     }
                 }
@@ -46,53 +61,37 @@ namespace NickSchantz
                 return true;
             }
 
-            bool operator!=(Array<ElemType, SIZE> other) const
+            // inequality
+            bool operator!=(const Array<ElemType, SIZE> other) const
             {
-                return ~(this == other);
+                return !(*this == other);
             }
 
             // l-value version
             // Throw invalid_argument if subscript out of range
-            ElemType operator[](int index)
+            ElemType& operator[](int index)
             {
-                try
+                if ((index >= SIZE) || (index < 0))
                 {
-                    if ((index > SIZE) || (index < 0))
-                    {
-                        throw invalid_argument;
-                    }
-                    return this->elements[index];
+                    throw invalid_argument("index is out of range");
                 }
-                catch (invalid_argument &ex)
-                {
-                    cerr << ex.what() << "\n";
-                }
+                return this->elements[index];
             }
 
             // r-value version
             // Throw invalid_argument if subscript out of range
-            ElemType& operator[](int index) const
+            const ElemType operator[](int index) const
             {
-                try
+                if ((index >= SIZE) || (index < 0))
                 {
-                    if ((index > SIZE) || (index < 0))
-                    {
-                        throw invalid_argument;
-                    }
-                    return this->elements[index];
+                    throw invalid_argument("index is out of range");
                 }
-                catch (invalid_argument &ex)
-                {
-                    cerr << ex.what() << "\n";
-                }
-
+                return this->elements[index];
             }
-
-
         private:
-            elements ElemType[SIZE];
+            ElemType elements[SIZE];
 
     };
 }
 
-#endif ARRAY_H
+#endif
