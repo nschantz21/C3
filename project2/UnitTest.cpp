@@ -24,10 +24,10 @@ using Project2::AngularSensor;
 
 #include "ConstantSignal.h"
 using Project2::ConstantSignal;
-
+*/
 #include "DataRecorder.h"
 using Project2::DataRecorder;
-
+/*
 #include "MonitoringSystem.h"
 using Project2::MonitoringSystem;
 
@@ -99,7 +99,7 @@ void Project2UnitTest::TestTime()
 	TestTime_ToString();
 	TestTime_OperatorPlusEqual();
 }
-/*
+
 void TestDataRecorder_log0DigitsAfterSensorValueDecimal()
 {
 	TestFramework::BeginTest("TestDataRecorder_log0DigitsAfterSensorValueDecimal");
@@ -162,7 +162,7 @@ void Project2UnitTest::TestDataRecorder()
 	TestDataRecorder_log2DigitsAfterSensorValueDecimal();
 	TestDataRecorder_log3DigitsAfterSensorValueDecimal();
 }
-
+/*
 void TestConstantSignal_Zeroed()
 {
 	TestFramework::BeginTest("TestConstantSignal_Zeroed");
