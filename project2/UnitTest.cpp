@@ -21,10 +21,10 @@ using std::string;
 /*
 #include "AngularSensor.h"
 using Project2::AngularSensor;
-
+*/
 #include "ConstantSignal.h"
 using Project2::ConstantSignal;
-*/
+
 #include "DataRecorder.h"
 using Project2::DataRecorder;
 /*
@@ -42,10 +42,10 @@ using Project2::SawtoothSignal;
 
 #include "Sensor.h"
 using Project2::Sensor;
-
+*/
 #include "Signal.h"
 using Project2::Signal;
-
+/*
 #include "SineSignal.h"
 using Project2::SineSignal;
 
@@ -162,7 +162,7 @@ void Project2UnitTest::TestDataRecorder()
 	TestDataRecorder_log2DigitsAfterSensorValueDecimal();
 	TestDataRecorder_log3DigitsAfterSensorValueDecimal();
 }
-/*
+
 void TestConstantSignal_Zeroed()
 {
 	TestFramework::BeginTest("TestConstantSignal_Zeroed");
@@ -233,7 +233,7 @@ void Project2UnitTest::TestConstantSignal()
 	TestConstantSignal_VariedTimeOffset();
 	TestConstantSignal_VariedAll();
 }
-
+/*
 void TestSawtoothSignal_Zeroed()
 {
 	TestFramework::BeginTest("TestSawtoothSignal_Zeroed");
