@@ -1,17 +1,26 @@
-#ifndef TIME_H
-#define TIME_H
+#ifndef PROJECT2_TIME_H
+#define PROJECT2_TIME_H
 
-class Time
+#include <iostream>
+using std::cout;
+using std::ostream;
+
+namespace Project2
 {
-    public:
-        Time(int hours, int minutes, int seconds);
-        int getTotalTimeAsSeconds() const;
-        const Time& operator+=(const Time& rhs) const;
-        ostream& operator<<(ostream& os, const Time& rhs);  
+    class Time
+    {
+        friend ostream& operator<<(ostream& os, const Time& rhs);
+        public:
+            Time(int hours, int minutes, int seconds);
+            int getTotalTimeAsSeconds() const;
+            const Time& operator+=(const Time& rhs);
+    
+        private:
+            int seconds;
+    
+    };
 
-    private:
-        int seconds;
-
-};
+    ostream& operator<<(ostream& os, const Time& rhs);
+}
 
 #endif
