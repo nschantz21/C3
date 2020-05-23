@@ -1,33 +1,36 @@
-#include <ostream>
+#include <iostream>
 using std::cout;
 
 #include "Time.h"
 
-Time::Time(int hours, int minutes, int seconds)
+Project2::Time::Time(int hours, int minutes, int seconds):
+seconds(0)
 {
-    seconds += seconds + (minutes * 60) + (hours * 3600);
+    this->seconds += seconds + (minutes * 60) + (hours * 3600);
 }
 
-
-
 int
-Time::getTotalTimeAsSeconds() const
+Project2::Time::getTotalTimeAsSeconds() const
 {
     return seconds;
 }
 
-const Time&
-// TODO: should parameter be const?
-Time::operator+=(const Time& rhs) const
+const Project2::Time &
+Project2::Time::operator+=(const Time &rhs)
 {
-    int totalSeconds = getTotalTimeAsSeconds() + rhs.getTotalTimeAsSeconds();
-    int totalHours = totalSeconds / 3600; // TODO: convert magic number to const member
+    seconds += rhs.getTotalTimeAsSeconds();
+    return *this;
+}
+
+ostream &
+Project2::operator<<(ostream &os, const Time &rhs)
+{
+    int totalSeconds = rhs.getTotalTimeAsSeconds();
+    int totalHours = totalSeconds / 3600;
     int remainderlMinutes = (totalSeconds / 60) - (totalHours * 60);
     int remainderrSeconds = totalSeconds
         -(totalHours * 3600)
         - (remainderlMinutes * 60);
-    Time *returnTime = new Time(totalHours, remainderlMinutes, remainderrSeconds);
-    return *returnTime;
+    os << totalHours << "h:" << remainderlMinutes << "m:" << remainderrSeconds << "s";
+    return os;
 }
-
-
