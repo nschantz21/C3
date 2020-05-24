@@ -48,10 +48,10 @@ using Project2::Signal;
 
 #include "SineSignal.h"
 using Project2::SineSignal;
-/*
+
 #include "TemperatureSensor.h"
 using Project2::TemperatureSensor;
-*/
+
 #include "Time.h"
 using Project2::Time;
 /*
@@ -537,7 +537,7 @@ void Project2UnitTest::TestPressureSensor()
 	TestPressureSensor_takeReadingFromSawtoothSignal();
 	TestPressureSensor_takeReadingFromSineSignal();
 }
-/*
+
 void TestTemperatureSensor_takeReadingFromConstantSignal()
 {
 	TestFramework::BeginTest("TestTemperatureSensor_takeReadingFromConstantSignal");
@@ -586,7 +586,7 @@ void Project2UnitTest::TestTemperatureSensor()
 	TestTemperatureSensor_takeReadingFromSawtoothSignal();
 	TestTemperatureSensor_takeReadingFromSineSignal();
 }
-
+/*
 void TestVibrationSensor_takeReadingFromConstantSignal()
 {
 	TestFramework::BeginTest("TestVibrationSensor_takeReadingFromConstantSignal");
