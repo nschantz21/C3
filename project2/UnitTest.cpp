@@ -27,10 +27,10 @@ using Project2::ConstantSignal;
 
 #include "DataRecorder.h"
 using Project2::DataRecorder;
-/*
+
 #include "MonitoringSystem.h"
 using Project2::MonitoringSystem;
-*/
+
 #include "PeriodicSignal.h"
 using Project2::PeriodicSignal;
 
@@ -635,7 +635,7 @@ void Project2UnitTest::TestVibrationSensor()
 	TestVibrationSensor_takeReadingFromSawtoothSignal();
 	TestVibrationSensor_takeReadingFromSineSignal();
 }
-/*
+
 void TestMonitoringSystem_takeReadingNoSensors()
 {
 	TestFramework::BeginTest("TestMonitoringSystem_takeReadingNoSensors");
@@ -810,4 +810,3 @@ void Project2UnitTest::TestMonitoringSystem()
 	TestMonitoringSystem_Take2Readings3Sensors();
 	TestMonitoringSystem_Take5Readings5Sensors();
 }
-*/

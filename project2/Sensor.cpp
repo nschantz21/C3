@@ -7,9 +7,9 @@ Project2::Sensor::Sensor(string name, Signal &source)
 }
 
 void
-Project2::Sensor::takeReading(Time t, DataRecorder &recorder)
+Project2::Sensor::takeReading(Time t, const DataRecorder &recorder) const
 {
-    recorder.log(t, name, (&getSource())->getVoltageAtTime(t), getUnits());
+    recorder.log(t, name, getSource().getVoltageAtTime(t), getUnits());
 }
 
 string
@@ -19,7 +19,7 @@ Project2::Sensor::getName() const
 }
 
 Signal &
-Project2::Sensor::getSource()
+Project2::Sensor::getSource() const
 {
     return source;
 }

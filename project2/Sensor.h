@@ -17,12 +17,12 @@ namespace Project2
     {
         public:
             Sensor(string name, Signal &source);
-            void takeReading(Time t, DataRecorder &recorder);
+            void takeReading(Time t, const DataRecorder &recorder) const;
 
         protected:
             virtual string getUnits() const = 0;
             string getName() const;
-            Signal &getSource();
+            Signal &getSource() const;
 
         private:
             string name;
