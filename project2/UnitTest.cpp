@@ -33,10 +33,10 @@ using Project2::MonitoringSystem;
 */
 #include "PeriodicSignal.h"
 using Project2::PeriodicSignal;
-/*
+
 #include "PressureSensor.h"
 using Project2::PressureSensor;
-*/
+
 #include "SawtoothSignal.h"
 using Project2::SawtoothSignal;
 
@@ -488,7 +488,7 @@ void Project2UnitTest::TestAngularSensor()
 	TestAngularSensor_takeReadingFromSawtoothSignal();
 	TestAngularSensor_takeReadingFromSineSignal();
 }
-/*
+
 void TestPressureSensor_takeReadingFromConstantSignal()
 {
 	TestFramework::BeginTest("TestPressureSensor_takeReadingFromConstantSignal");
@@ -537,7 +537,7 @@ void Project2UnitTest::TestPressureSensor()
 	TestPressureSensor_takeReadingFromSawtoothSignal();
 	TestPressureSensor_takeReadingFromSineSignal();
 }
-
+/*
 void TestTemperatureSensor_takeReadingFromConstantSignal()
 {
 	TestFramework::BeginTest("TestTemperatureSensor_takeReadingFromConstantSignal");
