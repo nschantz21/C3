@@ -18,10 +18,10 @@ using std::string;
 #include "UnitTest.h"
 
 // Include Project2 headers
-/*
+
 #include "AngularSensor.h"
 using Project2::AngularSensor;
-*/
+
 #include "ConstantSignal.h"
 using Project2::ConstantSignal;
 
@@ -39,10 +39,10 @@ using Project2::PressureSensor;
 */
 #include "SawtoothSignal.h"
 using Project2::SawtoothSignal;
-/*
+
 #include "Sensor.h"
 using Project2::Sensor;
-*/
+
 #include "Signal.h"
 using Project2::Signal;
 
@@ -439,7 +439,7 @@ void Project2UnitTest::TestSineSignal()
 	TestSineSignal_VariedTimeOffset();
 	TestSineSignal_VariedAll();
 }
-/*
+
 void TestAngularSensor_takeReadingFromConstantSignal()
 {
 	TestFramework::BeginTest("TestAngularSensor_takeReadingFromConstantSignal");
@@ -488,7 +488,7 @@ void Project2UnitTest::TestAngularSensor()
 	TestAngularSensor_takeReadingFromSawtoothSignal();
 	TestAngularSensor_takeReadingFromSineSignal();
 }
-
+/*
 void TestPressureSensor_takeReadingFromConstantSignal()
 {
 	TestFramework::BeginTest("TestPressureSensor_takeReadingFromConstantSignal");
