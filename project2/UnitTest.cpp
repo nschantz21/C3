@@ -30,16 +30,16 @@ using Project2::DataRecorder;
 /*
 #include "MonitoringSystem.h"
 using Project2::MonitoringSystem;
-
+*/
 #include "PeriodicSignal.h"
 using Project2::PeriodicSignal;
-
+/*
 #include "PressureSensor.h"
 using Project2::PressureSensor;
-
+*/
 #include "SawtoothSignal.h"
 using Project2::SawtoothSignal;
-
+/*
 #include "Sensor.h"
 using Project2::Sensor;
 */
@@ -233,7 +233,7 @@ void Project2UnitTest::TestConstantSignal()
 	TestConstantSignal_VariedTimeOffset();
 	TestConstantSignal_VariedAll();
 }
-/*
+
 void TestSawtoothSignal_Zeroed()
 {
 	TestFramework::BeginTest("TestSawtoothSignal_Zeroed");
@@ -333,7 +333,7 @@ void Project2UnitTest::TestSawtoothSignal()
 	TestSawtoothSignal_VariedTimeOffset();
 	TestSawtoothSignal_VariedAll();
 }
-
+/*
 bool IsWithinRange(double expectedValue, double delta, double actualValue)
 {
 	return (actualValue > expectedValue - delta) && (actualValue < expectedValue + delta);

@@ -19,7 +19,7 @@ namespace Project2
                 Time timestamp,
                 string sensorName,
                 double sensorVoltage,
-                string sensorUnits);
+                string sensorUnits) const;
 
         private:
             ostream &out;

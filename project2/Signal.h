@@ -12,7 +12,7 @@ namespace Project2
             Signal(double voltageOffset, Time timeOffset):
                 voltageOffset(voltageOffset), timeOffset(timeOffset) {};
             
-            virtual double getVoltageAtTime(Time t) = 0;
+            virtual double getVoltageAtTime(Time t) const = 0;
         
         protected:
             double getVoltageOffset() const;

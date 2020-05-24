@@ -14,7 +14,7 @@ Project2::DataRecorder::log(
     Time timestamp,
     string sensorName,
     double sensorVoltage,
-    string sensorUnits)
+    string sensorUnits) const
 {
     
     out <<

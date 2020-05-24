@@ -13,7 +13,7 @@ namespace Project2
     {
         public:
             ConstantSignal(double voltageOffset, Time timeOffset);
-            virtual double getVoltageAtTime(Time t);
+            virtual double getVoltageAtTime(Time t) const;
     };
 }
 
