@@ -11,9 +11,9 @@ Project2::SawtoothSignal::SawtoothSignal(double voltageOffset, Time timeOffset,
 double
 Project2::SawtoothSignal::getVoltageAtTime(Time t) const
 {
-    t += getTimeOffset();
+    ;
     double numerator = (
-        t.getTotalTimeAsSeconds() * 
+        (t.getTotalTimeAsSeconds() + getTimeOffset().getTotalTimeAsSeconds()) * 
         (getMaxVoltage() - getMinVoltage()) /
         getPeriod().getTotalTimeAsSeconds());
     double denomenator = getMaxVoltage() - getMinVoltage();

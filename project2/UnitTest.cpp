@@ -45,10 +45,10 @@ using Project2::Sensor;
 */
 #include "Signal.h"
 using Project2::Signal;
-/*
+
 #include "SineSignal.h"
 using Project2::SineSignal;
-
+/*
 #include "TemperatureSensor.h"
 using Project2::TemperatureSensor;
 */
@@ -333,7 +333,7 @@ void Project2UnitTest::TestSawtoothSignal()
 	TestSawtoothSignal_VariedTimeOffset();
 	TestSawtoothSignal_VariedAll();
 }
-/*
+
 bool IsWithinRange(double expectedValue, double delta, double actualValue)
 {
 	return (actualValue > expectedValue - delta) && (actualValue < expectedValue + delta);
@@ -346,6 +346,7 @@ void TestSineSignal_Zeroed()
 	// Zero voltage offset, zero time offset, voltage range from 0 to 10, period 1 minute
 	SineSignal ss1(0, Time(0, 0, 0), 0, 10, Time(0, 1, 0));
 	TEST_ASSERT(IsWithinRange(5, .1, ss1.getVoltageAtTime(Time(0, 0, 0))));
+    cout << ss1.getVoltageAtTime(Time(0, 0, 15));
 	TEST_ASSERT(IsWithinRange(10, .1, ss1.getVoltageAtTime(Time(0, 0, 15))));
 	TEST_ASSERT(IsWithinRange(5, .1, ss1.getVoltageAtTime(Time(0, 0, 30))));
 	TEST_ASSERT(IsWithinRange(0, .1, ss1.getVoltageAtTime(Time(0, 0, 45))));
@@ -438,7 +439,7 @@ void Project2UnitTest::TestSineSignal()
 	TestSineSignal_VariedTimeOffset();
 	TestSineSignal_VariedAll();
 }
-
+/*
 void TestAngularSensor_takeReadingFromConstantSignal()
 {
 	TestFramework::BeginTest("TestAngularSensor_takeReadingFromConstantSignal");
