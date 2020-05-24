@@ -54,10 +54,10 @@ using Project2::TemperatureSensor;
 
 #include "Time.h"
 using Project2::Time;
-/*
+
 #include "VibrationSensor.h"
 using Project2::VibrationSensor;
-*/
+
 void Project2UnitTest::Initialize(ostream &out)
 {
 	TestFramework::Initialize(&out);
@@ -586,7 +586,7 @@ void Project2UnitTest::TestTemperatureSensor()
 	TestTemperatureSensor_takeReadingFromSawtoothSignal();
 	TestTemperatureSensor_takeReadingFromSineSignal();
 }
-/*
+
 void TestVibrationSensor_takeReadingFromConstantSignal()
 {
 	TestFramework::BeginTest("TestVibrationSensor_takeReadingFromConstantSignal");
@@ -635,7 +635,7 @@ void Project2UnitTest::TestVibrationSensor()
 	TestVibrationSensor_takeReadingFromSawtoothSignal();
 	TestVibrationSensor_takeReadingFromSineSignal();
 }
-
+/*
 void TestMonitoringSystem_takeReadingNoSensors()
 {
 	TestFramework::BeginTest("TestMonitoringSystem_takeReadingNoSensors");
