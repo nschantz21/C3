@@ -1,3 +1,7 @@
+/*
+ * TemperatureSensor.h
+ * Define TemperatureSensor class
+ */
 #ifndef PROJECT2_TEMPERATURESENSOR_H
 #define PROJECT2_TEMPERATURESENSOR_H
 
@@ -11,7 +15,8 @@ namespace Project2
         public:
             TemperatureSensor(string name, Signal &sensor);
         protected:
-            string getUnits() const;
+            // implement pure virtual function
+            virtual string getUnits() const;
     };
 }
 

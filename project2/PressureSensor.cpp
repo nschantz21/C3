@@ -1,3 +1,7 @@
+/*
+ * PressureSensor.cpp
+ * Define PressureSensor class methods
+ */
 #include "PressureSensor.h"
 
 Project2::PressureSensor::PressureSensor(string name, Signal &source)

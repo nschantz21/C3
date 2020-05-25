@@ -1,3 +1,7 @@
+/*
+ * PeriodicSignal.h
+ * Define PeriodicSignal abstract class
+ */
 #ifndef PROJECT2_PERIODICSIGNAL_H
 #define PROJECT2_PERIODICSIGNAL_H
 
@@ -9,6 +13,7 @@ using Project2::Time;
 
 namespace Project2
 {
+    // abstract class
     class PeriodicSignal: public Signal
     {
         public:
@@ -17,6 +22,7 @@ namespace Project2
                 Time timeOffset,
                 double minVoltage,
                 double maxVoltage, Time period);
+            // redefining pure virtual functinon from Signal for clarity
             virtual double getVoltageAtTime(Time t) const = 0;
 
         protected:

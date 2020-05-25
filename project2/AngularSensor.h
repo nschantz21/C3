@@ -1,3 +1,7 @@
+/*
+ * AngularSensor.h
+ * Define AngularSensor class
+ */
 #ifndef PROJECT2_ANGULARSENSOR_H
 #define PROJECT2_ANGULARSENSOR_H
 
@@ -12,6 +16,7 @@ namespace Project2
             AngularSensor(string name, Signal& source);
         
         protected:
+            // implement pure virtual function
             virtual string getUnits() const;
     };
 }

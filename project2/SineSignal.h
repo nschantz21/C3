@@ -1,3 +1,7 @@
+/*
+ * SineSignal.h
+ * Define SineSignal class
+ */
 #ifndef PROJECT2_SINESIGNAL_H
 #define PROJECT2_SINESIGNAL_H
 
@@ -9,10 +13,11 @@ namespace Project2
     class SineSignal: public PeriodicSignal
     {
         const double PI = 3.14159265358979323846;
+
         public:
             SineSignal(double voltageOffset, Time timeOffset,
                 double minVoltage, double maxVoltage, Time period);
-            
+            // implement pure virtual function 
             virtual double getVoltageAtTime(Time t) const;
     };
 }

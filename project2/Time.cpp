@@ -1,10 +1,11 @@
-#include <iostream>
-using std::cout;
-
+/*
+ * Time.cpp
+ * Define Time methods
+ */
 #include "Time.h"
 
-Project2::Time::Time(int hours, int minutes, int seconds):
-seconds(0)
+Project2::Time::Time(int hours, int minutes, int seconds)
+    :seconds(0)
 {
     this->seconds += seconds + (minutes * 60) + (hours * 3600);
 }
@@ -25,12 +26,17 @@ Project2::Time::operator+=(const Time &rhs)
 ostream &
 Project2::operator<<(ostream &os, const Time &rhs)
 {
+    // convert seconds to HH:MM:SS
     int totalSeconds = rhs.getTotalTimeAsSeconds();
-    int totalHours = totalSeconds / 3600;
-    int remainderlMinutes = (totalSeconds / 60) - (totalHours * 60);
+    // use friend status to access private data members:
+    // HOUR_DIVISOR and MIN_DIVISOR
+    int totalHours = totalSeconds / rhs.HOUR_DIVISOR;
+    int remainderlMinutes = (totalSeconds / rhs.MIN_DIVISOR)
+        - (totalHours * rhs.MIN_DIVISOR);
     int remainderrSeconds = totalSeconds
-        -(totalHours * 3600)
-        - (remainderlMinutes * 60);
-    os << totalHours << "h:" << remainderlMinutes << "m:" << remainderrSeconds << "s";
+        - (totalHours * rhs.HOUR_DIVISOR)
+        - (remainderlMinutes * rhs.MIN_DIVISOR);
+    os << totalHours << "h:" << remainderlMinutes << "m:" << remainderrSeconds
+        << "s";
     return os;
 }

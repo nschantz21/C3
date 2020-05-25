@@ -1,3 +1,7 @@
+/*
+ * VibrationSensor.cpp
+ * Define VibrationSensor class methods
+ */
 #include "VibrationSensor.h"
 
 Project2::VibrationSensor::VibrationSensor(string name, Signal &source)

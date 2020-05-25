@@ -1,3 +1,7 @@
+/*
+ * PressureSensor.h
+ * Define PressureSensor class
+ */
 #ifndef PROJECT2_PRESSURESENSOR_H
 #define PROJECT2_PRESSURESENSOR_H
 
@@ -13,7 +17,8 @@ namespace Project2
             PressureSensor(string name, Signal &source);
 
         protected:
-            string getUnits() const;
+            // implement virtual function
+            virtual string getUnits() const;
 
     };
 }

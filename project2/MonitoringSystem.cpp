@@ -1,3 +1,7 @@
+/*
+ * MonitoringSystem.cpp
+ * Define MonitoringSystem class methods
+ */
 #include "MonitoringSystem.h"
 
 Project2::MonitoringSystem::MonitoringSystem(ostream &out)
@@ -18,6 +22,7 @@ Project2::MonitoringSystem::takeReading(Time t) const
 {
     for (Sensor *s: sensors)
     {
+        // calling method through pointer calls correct derive object's method
         s->takeReading(t, recorder);
     }
 }

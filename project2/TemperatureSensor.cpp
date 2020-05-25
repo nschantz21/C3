@@ -1,3 +1,7 @@
+/*
+ * TemperatureSensor.cpp
+ * Define TemperatureSensor class methods
+ */
 #include "TemperatureSensor.h"
 
 Project2::TemperatureSensor::TemperatureSensor(string name, Signal &source)

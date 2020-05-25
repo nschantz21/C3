@@ -1,3 +1,7 @@
+/*
+ * Sensor.cpp
+ * Define Sensor class methods
+ */
 #include "Sensor.h"
 
 Project2::Sensor::Sensor(string name, Signal &source)
@@ -6,6 +10,7 @@ Project2::Sensor::Sensor(string name, Signal &source)
 
 }
 
+// recorder parameter const because DataRecorder.log() is const
 void
 Project2::Sensor::takeReading(Time t, const DataRecorder &recorder) const
 {

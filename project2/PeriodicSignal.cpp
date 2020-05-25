@@ -1,4 +1,7 @@
-
+/*
+ * PeriodicSignal.cpp
+ * Define PeriodicSignal methods
+ */
 #include "PeriodicSignal.h"
 
 Project2::PeriodicSignal::PeriodicSignal(double voltageOffset, Time timeOffset,

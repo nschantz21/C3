@@ -1,3 +1,6 @@
+/*
+ * Define ConstantSignal methods
+ */
 #include "ConstantSignal.h"
 
 Project2::ConstantSignal::ConstantSignal(double voltageOffset, Time timeOffset)

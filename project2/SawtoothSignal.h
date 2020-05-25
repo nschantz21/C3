@@ -1,3 +1,7 @@
+/*
+ * Sawtooth.h
+ * Define Sawtooth class
+ */
 #ifndef PROJECT2_SAWTOOTHSIGNAL_H
 #define PROJECT2_SAWTOOTHSIGNAL_H
 
@@ -14,7 +18,7 @@ namespace Project2
         public:
             SawtoothSignal(double voltageOffset, Time timeOffset,
                 double minVoltage, double maxVoltage, Time period);
-            
+            // implement virtual function 
             virtual double getVoltageAtTime(Time t) const;
 
     };

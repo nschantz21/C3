@@ -1,3 +1,7 @@
+/*
+ * AngularSensor.cpp
+ * Define AngularSensor class methods
+ */
 #include "AngularSensor.h"
 
 Project2::AngularSensor::AngularSensor(string name, Signal& source):

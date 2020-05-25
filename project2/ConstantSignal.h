@@ -1,11 +1,12 @@
+/*
+ * ConstantSignal.h
+ * Define ConstantSignal class
+ */
 #ifndef PROJECT2_CONSTANTSIGNAL_H
 #define PROJECT2_CONSTANTSIGNAL_H
 
 #include "Signal.h"
 using Project2::Signal;
-
-#include "Time.h"
-using Project2::Time;
 
 namespace Project2
 {
@@ -13,6 +14,7 @@ namespace Project2
     {
         public:
             ConstantSignal(double voltageOffset, Time timeOffset);
+            // implement the pure virtual function from the base class
             virtual double getVoltageAtTime(Time t) const;
     };
 }

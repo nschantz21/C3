@@ -1,3 +1,7 @@
+/*
+ * VibrationSensor.h
+ * Define VibrationSensor class
+ */
 #ifndef PROJECT2_VIBRATIONSENSOR_H
 #define PROJECT2_VIBRATIONSENSOR_H
 
@@ -11,7 +15,8 @@ namespace Project2
         public:
             VibrationSensor(string name, Signal &source);
         protected:
-            string getUnits() const;
+            // implementing pure virtual function
+            virtual string getUnits() const;
     };
 }
 
