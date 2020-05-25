@@ -1,5 +1,0 @@
-g++ -g -Wall -O0 *.cpp
-
-valgrind --leak-check=yes ./a.out
-
-rm -f a.out
