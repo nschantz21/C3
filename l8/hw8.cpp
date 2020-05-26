@@ -32,7 +32,7 @@ int main()
         while(in >> holder)
         {
             // Insert the person and a newline into a stringstream
-            person_stream << holder;
+            person_stream << holder << "\n";
         }
         // Output the contents of the stringstream to stdout
         cout << person_stream.str();

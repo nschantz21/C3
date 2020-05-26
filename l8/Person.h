@@ -21,6 +21,7 @@ using std::ostream;
         string firstname, lastname;
         int ageYears;
         double heightInches, weightPounds;
+        const int PRECISION = 2;
     };
 
     istream &operator>>(istream &in, Person &person);
